@@ -55,4 +55,15 @@ public class PostReply {
     public void setUid(Integer uid) {
         this.uid = uid;
     }
+
+
+    @Override
+    public String toString() {
+        return "PostReply{" +
+                "rid=" + rid +
+                ", rcontent='" + rcontent + '\'' +
+                ", rtime=" + rtime +
+                ", uid=" + uid +
+                '}';
+    }
 }

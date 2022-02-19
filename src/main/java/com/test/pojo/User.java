@@ -90,4 +90,17 @@ public class User {
     public void setUinfo(String uinfo) {
         this.uinfo = uinfo;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", upassword='" + upassword + '\'' +
+                ", uimg='" + uimg + '\'' +
+                ", gender=" + gender +
+                ", uinfo='" + uinfo + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

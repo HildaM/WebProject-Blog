@@ -34,6 +34,16 @@
         <url-pattern>/signup</url-pattern>
     </servlet-mapping>
 
+    <!--  PostDisplayServlet：展示帖子   -->
+    <servlet>
+        <servlet-name>PostDisplayServlet</servlet-name>
+        <servlet-class>com.test.servlet.post.PostDisplayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PostDisplayServlet</servlet-name>
+        <url-pattern>/post/getAllPosts</url-pattern>
+    </servlet-mapping>
+
 
     <!--   servlet ends-->
 

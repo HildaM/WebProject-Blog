@@ -20,6 +20,12 @@ public class CommonResult {
         this.data = null;
     }
 
+    public CommonResult(String code, Object data) {
+        this.code = code;
+        this.data = data;
+        this.ok = "true";
+    }
+
 
 
     public CommonResult(String code, String message, String ok, Object data) {

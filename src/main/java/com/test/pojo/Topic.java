@@ -33,4 +33,12 @@ public class Topic {
     public void setTname(String tname) {
         this.tname = tname;
     }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "tid=" + tid +
+                ", tname='" + tname + '\'' +
+                '}';
+    }
 }
