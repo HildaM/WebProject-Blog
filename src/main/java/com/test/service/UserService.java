@@ -1,5 +1,6 @@
 package com.test.service;
 
+import com.test.component.CommonResult;
 import com.test.pojo.User;
 
 import java.util.Map;
@@ -12,8 +13,8 @@ import java.util.Map;
  */
 public interface UserService {
     // 登录服务
-    public boolean LoginService(Map<String, String> params);
+    public CommonResult LoginService(Map<String, String> params);
 
     // 注册方法
-    public boolean SignUpService(Map<String, String> params);
+    public CommonResult SignUpService(Map<String, String> params);
 }

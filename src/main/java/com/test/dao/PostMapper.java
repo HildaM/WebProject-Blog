@@ -13,4 +13,7 @@ import java.util.List;
 public interface PostMapper {
     // 获取所有帖子
     public List<Post> getAllPosts();
+
+    // 添加帖子
+    public int publishPost(Post post);
 }

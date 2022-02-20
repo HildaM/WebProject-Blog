@@ -30,8 +30,8 @@ public class PostDisplayServlet extends HttpServlet {
         resp.setContentType("application/json; charset=utf-8");
 
         /**
-         * TODO 将(postImg, postId, postTitle, content, date, commentNumber)
-         *      封装成post类，并且将所有post取出，放到一个list中，再将其封装到统一返回类中
+         * 将(postImg, postId, postTitle, content, date, commentNumber)
+         * 封装成post类，并且将所有post取出，放到一个list中，再将其封装到统一返回类中
          **/
 
         // 1. 调用PostService的服务，获取所有帖子

@@ -2,7 +2,6 @@ package com.test.servlet.user;
 
 import com.alibaba.fastjson.JSON;
 import com.test.component.CommonResult;
-import com.test.component.WebResponce;
 
 import com.test.service.impl.UserServiceImpl;
 import com.test.utils.JSONUtil;
@@ -45,18 +44,10 @@ public class LoginServlet extends HttpServlet {
 
         // 3. 调用UserService登录服务
         UserServiceImpl userService = new UserServiceImpl();
-        String result = null;
 
-        if (userService.LoginService(params)) {
-            CommonResult success = new CommonResult(WebResponce.SUCCESS.getCode(), "true");
-            result = JSON.toJSONString(success);
-            resp.getWriter().write(result);
-        }
-        else {
-            CommonResult fail = new CommonResult(WebResponce.FAIL.getCode(), "false");
-            result = JSON.toJSONString(fail);
-            resp.getWriter().write(result);
-        }
+        CommonResult commonResult = userService.LoginService(params);
+        String result = JSON.toJSONString(commonResult);
+        resp.getWriter().write(result);
 
     }
 

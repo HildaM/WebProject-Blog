@@ -32,6 +32,14 @@ public class Post {
     public Post() {
     }
 
+    public Post(String pname, String pcontent, String postImg, Integer tid, Integer uid) {
+        this.pname = pname;
+        this.pcontent = pcontent;
+        this.tid = tid;
+        this.uid = uid;
+        this.postImg = postImg;
+    }
+
     public Post(Integer pid, String pname, String pcontent, Integer tid, Integer praise, Timestamp pcreate, Timestamp pmodified, Integer uid, String postImg, Integer rid) {
         this.pid = pid;
         this.pname = pname;

@@ -8,11 +8,11 @@
         webproject.users
     </sql>
 
-    <!--  查询用户  -->
-    <select id="selectUserById" resultType="User">
-        SELECT *
+    <!--  查询用户Id  -->
+    <select id="getUserId" parameterType="String" resultType="Integer">
+        SELECT uid
         FROM <include refid="TABLES"/>
-        WHERE Id = #{Id}
+        WHERE uname = #{uname}
     </select>
 
 

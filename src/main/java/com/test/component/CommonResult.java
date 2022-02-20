@@ -11,6 +11,7 @@ public class CommonResult {
     private String message;
     private String ok;
     private Object data;
+    private String token;
 
 
     public CommonResult(String code, String ok) {
@@ -33,6 +34,12 @@ public class CommonResult {
         this.message = message;
         this.ok = ok;
         this.data = data;
+    }
+
+    public CommonResult(String code, String ok, String token) {
+        this.code = code;
+        this.ok = ok;
+        this.token = token;
     }
 
 

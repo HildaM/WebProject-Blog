@@ -1,12 +1,13 @@
 package com.test.service.impl;
 
+import com.test.component.CommonResult;
+import com.test.component.WebResponce;
 import com.test.dao.UserMapper;
 import com.test.pojo.User;
 import com.test.service.UserService;
 import com.test.utils.MybatisUtil;
+import com.test.utils.TokenUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.builder.ToStringExclude;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
@@ -22,7 +23,7 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public boolean LoginService(Map<String, String> params) {
+    public CommonResult LoginService(Map<String, String> params) {
         // 数据库连接
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
@@ -32,21 +33,24 @@ public class UserServiceImpl implements UserService {
         String password = params.get("password");
         // System.out.println("service: " + username + " " + password);
 
+
         // 2. 数据校验
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password))
-            return false;
+            return new CommonResult(WebResponce.FAIL.getCode(), "false");
+
+        // 生成token
+        String token = TokenUtil.generateToken(username + ":" + password);
 
         // 3. 成功后，进行数据库查询
         User user = userMapper.selectUserByName(username);
         if (user != null) {
-//            System.out.println(user);
             if (user.getUname().equals(username) && user.getUpassword().equals(password))
-                return true;
-            else return false;
+                return new CommonResult(WebResponce.SUCCESS.getCode(), "true", token);
+            else return new CommonResult(WebResponce.FAIL.getCode(), "false");
         }
 
 
-        return false;
+        return new CommonResult(WebResponce.FAIL.getCode(), "false");
     }
 
 
@@ -63,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public boolean SignUpService(Map<String, String> params) {
+    public CommonResult SignUpService(Map<String, String> params) {
         // 数据库连接
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
@@ -75,16 +79,16 @@ public class UserServiceImpl implements UserService {
 
         // 2. 数据校验
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password))
-            return false;
+            return new CommonResult(WebResponce.FAIL.getCode(), "false");
 
         // 3. 成功后，添加用户
         User user = new User(username, password, email);
         if(userMapper.insertUser(user) > 0) {
-            return true;
+            return new CommonResult(WebResponce.SUCCESS.getCode(), "true");
         }
 
 
-        return false;
+        return new CommonResult(WebResponce.FAIL.getCode(), "false");
     }
 
     @Test

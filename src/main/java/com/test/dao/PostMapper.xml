@@ -45,4 +45,14 @@
             p.tid = t.tid and p.uid = u.uid and p.rid = r.pid;
     </select>
 
+
+
+    <!-- 发布帖子  -->
+    <insert id="publishPost" parameterType="Post">
+        INSERT INTO <include refid="TABLES"/>
+            (pname, pcontent, postImg, tid, uid)
+        VALUES
+            (#{pname}, #{pcontent}, #{postImg}, #{tid}, #{uid})
+    </insert>
+
 </mapper>

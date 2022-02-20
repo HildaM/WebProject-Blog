@@ -44,6 +44,16 @@
         <url-pattern>/post/getAllPosts</url-pattern>
     </servlet-mapping>
 
+    <!--  PostPublishServlet：发布帖子  -->
+    <servlet>
+        <servlet-name>PostPublishServlet</servlet-name>
+        <servlet-class>com.test.servlet.post.PostPublishServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PostPublishServlet</servlet-name>
+        <url-pattern>/post/publish</url-pattern>
+    </servlet-mapping>
+
 
     <!--   servlet ends-->
 
