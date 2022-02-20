@@ -51,12 +51,22 @@ public class PostServiceImpl implements PostService {
         String pname = params.get("pname");
         String postImg = params.get("postImg");
         String pcontent = params.get("content");
-        Integer tid = Integer.parseInt(params.get("tid"));
+//        Integer tid = Integer.parseInt(params.get("tid"));
+
+        // 测试代码
+        Integer tid = 1;
+
         String token = params.get("token");
+
+        // 测试代码
+        token = "4321:adliH";
         
         // 解析token，获取用户信息
         String username = TokenUtil.decodeToken(token);
         Integer uid = userMapper.getUserId(username);
+
+        // 测试代码
+        uid = 1;
 
         // 2. 数据校验
         if (StringUtils.isEmpty(pname) || tid <= 0 || uid <= 0)

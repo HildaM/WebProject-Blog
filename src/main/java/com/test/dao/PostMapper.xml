@@ -42,7 +42,7 @@
     <select id="getAllPosts" resultMap="getAllPostsInformation">
         select p.*, t.*, u.*, r.* from posts p, topics t, users u, postreplies r
         where
-            p.tid = t.tid and p.uid = u.uid and p.rid = r.pid;
+            p.tid = t.tid and p.uid = u.uid;
     </select>
 
 
