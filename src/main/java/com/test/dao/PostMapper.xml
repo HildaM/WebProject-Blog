@@ -46,6 +46,10 @@
     </select>
 
 
+    <!-- 获取指定帖子的所有评论   -->
+
+
+
 
     <!-- 发布帖子  -->
     <insert id="publishPost" parameterType="Post">

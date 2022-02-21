@@ -6,11 +6,12 @@ package com.test.component;
  * @author: Hilda   Hilda_quan@163.com
  * @date: 2022/2/17 10:04
  */
+
 public class CommonResult {
     private String code;
     private String message;
     private String ok;
-    private Object data;
+    private Object data;  // 数据主体，其他都不要管
     private String token;
 
 
@@ -73,5 +74,16 @@ public class CommonResult {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "CommonResult{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                ", ok='" + ok + '\'' +
+                ", data=" + data +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

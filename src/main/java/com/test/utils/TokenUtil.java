@@ -11,7 +11,6 @@ import org.junit.Test;
  */
 public class TokenUtil {
 
-
     // 生成token
     public static String generateToken(String str) {
         return StringUtils.reverse(str);

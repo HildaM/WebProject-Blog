@@ -55,6 +55,19 @@
     </servlet-mapping>
 
 
+    <!--  DetailServlet：返回指定pid的帖子详情  -->
+    <servlet>
+        <servlet-name>DetailServlet</servlet-name>
+        <servlet-class>com.test.servlet.detail.DetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DetailServlet</servlet-name>
+        <url-pattern>/detail/*</url-pattern>
+    </servlet-mapping>
+
+<!--  http://localhost:8081/detail/1  -->
+
+
     <!--   servlet ends-->
 
 </web-app>

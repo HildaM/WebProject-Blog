@@ -12,16 +12,23 @@ public class PostReply {
     private Integer rid;
     private String rcontent;
     private Timestamp rtime;
-    private Integer uid;
 
-    public PostReply(Integer rid, String rcontent, Timestamp rtime, Integer uid) {
+    private Integer uid;
+    private String uname;
+
+    private Integer pid;
+    private String pname;
+
+    public PostReply() {
+    }
+
+    public PostReply(Integer rid, String rcontent, Timestamp rtime, Integer uid, String uname, Integer pid) {
         this.rid = rid;
         this.rcontent = rcontent;
         this.rtime = rtime;
         this.uid = uid;
-    }
-
-    public PostReply() {
+        this.uname = uname;
+        this.pid = pid;
     }
 
     public Integer getRid() {
@@ -56,6 +63,21 @@ public class PostReply {
         this.uid = uid;
     }
 
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
 
     @Override
     public String toString() {
@@ -64,6 +86,8 @@ public class PostReply {
                 ", rcontent='" + rcontent + '\'' +
                 ", rtime=" + rtime +
                 ", uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", pid=" + pid +
                 '}';
     }
 }

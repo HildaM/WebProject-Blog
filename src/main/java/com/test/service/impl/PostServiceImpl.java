@@ -5,7 +5,6 @@ import com.test.component.WebResponce;
 import com.test.dao.PostMapper;
 import com.test.dao.UserMapper;
 import com.test.pojo.Post;
-import com.test.pojo.User;
 import com.test.service.PostService;
 import com.test.utils.MybatisUtil;
 import com.test.utils.TokenUtil;
