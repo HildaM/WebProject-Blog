@@ -114,4 +114,30 @@ public class UserServiceImpl implements UserService {
 
         System.out.println(userService.SignUpService(map));
     }
+
+
+    @Override
+    public CommonResult getUserInfo(String username) {
+        // 数据库连接
+        SqlSession sqlSession = MybatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        // 1. 获取用户信息
+        User user = userMapper.selectUserByName(username);
+
+        // 2. 封装返回的data
+        if (user != null) {
+            Map<String, String> map = new HashMap<>();
+            map.put("username", user.getUname());
+            map.put("name", user.getUname());
+            map.put("uinfo", user.getUinfo());
+            map.put("uimg", user.getUimg());
+
+            CommonResult commonResult = new CommonResult(WebResponce.SUCCESS.getCode(), map);
+            return commonResult;
+        }
+
+
+        return new CommonResult(WebResponce.FAIL.getCode(), "false");
+    }
 }

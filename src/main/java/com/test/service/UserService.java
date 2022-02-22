@@ -17,4 +17,7 @@ public interface UserService {
 
     // 注册方法
     public CommonResult SignUpService(Map<String, String> params);
+
+    // 根据用户名获取信息
+    CommonResult getUserInfo(String username);
 }

@@ -74,6 +74,17 @@
         <servlet-name>CommentServlet</servlet-name>
         <url-pattern>/detail/comment</url-pattern>
     </servlet-mapping>
+    
+    
+    <!--  UserDetailServlet：用户详情  -->
+    <servlet>
+        <servlet-name>UserDetailServlet</servlet-name>
+        <servlet-class>com.test.servlet.user.UserDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserDetailServlet</servlet-name>
+        <url-pattern>/user/detail</url-pattern>
+    </servlet-mapping>
 
 
     <!--   servlet ends-->
