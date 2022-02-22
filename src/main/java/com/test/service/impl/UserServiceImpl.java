@@ -40,12 +40,14 @@ public class UserServiceImpl implements UserService {
 
         // 生成token
         String token = TokenUtil.generateToken(username + ":" + password);
+        Map<String, String> tokenMap = new HashMap<>();
+        tokenMap.put("token", token);
 
         // 3. 成功后，进行数据库查询
         User user = userMapper.selectUserByName(username);
         if (user != null) {
             if (user.getUname().equals(username) && user.getUpassword().equals(password))
-                return new CommonResult(WebResponce.SUCCESS.getCode(), "true", token);
+                return new CommonResult(WebResponce.SUCCESS.getCode(), "true", tokenMap);
             else return new CommonResult(WebResponce.FAIL.getCode(), "false");
         }
 

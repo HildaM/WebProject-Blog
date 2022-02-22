@@ -14,4 +14,7 @@ public interface DetailMapper {
 
     // 根据指定的pid获取所有的postreplys
     public List<PostReply> getRepliesByPid(int pid);
+
+    // 添加评论
+    public int addComment(PostReply postReply);
 }

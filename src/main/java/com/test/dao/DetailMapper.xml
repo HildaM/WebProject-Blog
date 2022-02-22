@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.test.dao.DetailMapper">
 
+    <insert id="addComment" parameterType="postReply">
+        INSERT INTO webproject.postreplies
+            (pid, rcontent, uid)
+        VALUES
+            (#{pid}, #{rcontent}, #{uid})
+    </insert>
+
+
     <select id="getRepliesByPid" resultType="com.test.pojo.PostReply">
         select  r.*, u.uname
         from (webproject.postreplies r

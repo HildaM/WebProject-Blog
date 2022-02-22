@@ -29,9 +29,9 @@ public class DetailServlet extends HttpServlet {
         System.out.println(servletPath);
 
         // 2. 获取请求头里面的用户token，并解析出里面的用户信息
-//        String token = req.getHeader("token");
-//        String username = null;
-//        if (token != null) username = TokenUtil.decodeToken(token);
+        String token = req.getHeader("token");
+        String username = null;
+        if (token != null) username = TokenUtil.decodeToken(token);
 
         // 3. 获取URL最后的pid
         int pathId = WebUtil.getPathId(servletPath);

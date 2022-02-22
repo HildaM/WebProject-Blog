@@ -65,7 +65,15 @@
         <url-pattern>/detail/*</url-pattern>
     </servlet-mapping>
 
-<!--  http://localhost:8081/detail/1  -->
+    <!--  CommentServlet：指定帖子的回帖功能  -->
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>com.test.servlet.detail.CommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/detail/comment</url-pattern>
+    </servlet-mapping>
 
 
     <!--   servlet ends-->

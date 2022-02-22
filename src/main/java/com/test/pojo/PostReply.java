@@ -22,6 +22,12 @@ public class PostReply {
     public PostReply() {
     }
 
+    public PostReply(Integer pid, String rcontent, Integer uid) {
+        this.pid = pid;
+        this.rcontent = rcontent;
+        this.uid = uid;
+    }
+
     public PostReply(Integer rid, String rcontent, Timestamp rtime, Integer uid, String uname, Integer pid) {
         this.rid = rid;
         this.rcontent = rcontent;

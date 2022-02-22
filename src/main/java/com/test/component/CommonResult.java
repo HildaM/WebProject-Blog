@@ -37,10 +37,10 @@ public class CommonResult {
         this.data = data;
     }
 
-    public CommonResult(String code, String ok, String token) {
+    public CommonResult(String code, String ok, Object data) {
         this.code = code;
         this.ok = ok;
-        this.token = token;
+        this.data = data;
     }
 
 
